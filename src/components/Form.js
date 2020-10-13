@@ -81,6 +81,11 @@ export default function Form() {
                     value="agree"
                     type="checkbox"
                 />
+                <input
+                    className="submit-btn"
+                    id="submit"
+                    type="submit"
+                />
             </form>
         </StyledDiv>
     )
