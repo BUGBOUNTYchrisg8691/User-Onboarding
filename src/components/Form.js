@@ -27,10 +27,12 @@ const StyledDiv = styled.div`
     }
 `
 
-export default function Form() {
+export default function Form(props) {
+    const {getFormValues, formSubmit} = props
+
     return (
         <StyledDiv>
-            <form>
+            <form onSubmit={formSubmit}>
                 <label 
                     className="label"
                     htmlFor="name"
@@ -42,6 +44,7 @@ export default function Form() {
                     maxLength="30"
                     placeholder="Name"
                     type="text"
+                    onChange={getFormValues}
                 />
                 <hr />
                 <label
@@ -55,6 +58,7 @@ export default function Form() {
                     maxLength="30"
                     placeholder="Email"
                     type="text"
+                    onChange={getFormValues}
                 />
                 <hr />
                 <label
@@ -68,6 +72,7 @@ export default function Form() {
                     maxLength="30"
                     placeholder="Password"
                     type="text"
+                    onChange={getFormValues}
                 />
                 <hr />
                 <label
@@ -77,9 +82,10 @@ export default function Form() {
                 <input
                     className="checkbox"
                     id="termsCheckbox"
-                    name="termsOfService"
+                    name="terms"
                     value="agree"
                     type="checkbox"
+                    onChange={getFormValues}
                 />
                 <input
                     className="submit-btn"
