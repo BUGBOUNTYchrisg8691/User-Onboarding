@@ -6,14 +6,15 @@ import schema from "./schema"
 
 import Form from "./components/Form"
 
-const { v4: uuidv4 } = require('uuid')
+import { v4 as uuid } from "uuid"
 
 export default function App() {
     const initialFormValues = {
         user: '',
         email: '',
         password: '',
-        terms: false
+        terms: false,
+        id: uuid()
     }
 
     const [users, setUsers] = useState([])
@@ -62,7 +63,6 @@ export default function App() {
             })
             .catch(err => console.log(err))
     }
-
 
     const handleSetErrors = (name, value) => {
         yup
