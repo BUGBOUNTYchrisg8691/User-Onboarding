@@ -30,14 +30,6 @@ const StyledDiv = styled.div`
 
 export default function Form(props) {
     const {formData, update, submit, disabled, errors} = props
-    // const handleUpdate = e => {
-    //     update(e) 
-    // }
-
-    // const handleSubmit = e => {
-    //     e.preventDefualt()
-    //     submit()
-    // }
     
     return (
         <StyledDiv>
@@ -45,7 +37,7 @@ export default function Form(props) {
                 <label 
                     className="label"
                     htmlFor="name"
-                >Name</label>
+                >Name
                 <input
                     className="input"
                     id="inputName"
@@ -55,12 +47,13 @@ export default function Form(props) {
                     placeholder="Name"
                     type="text"
                     onChange={update}
-                />
+                /></label>
+                <div>{errors.name}</div>
                 <hr />
                 <label
                     className="label"
                     htmlFor="email"
-                >Email</label>
+                >Email
                 <input
                     className="input"
                     id="inputEmail"
@@ -70,12 +63,13 @@ export default function Form(props) {
                     placeholder="Email"
                     type="text"
                     onChange={update}
-                />
+                /></label>
+                <div>{errors.email}</div>
                 <hr />
                 <label
                     className="label"
                     htmlFor="password"
-                >Password</label>
+                >Password
                 <input
                     className="input"
                     id="inputPassword"
@@ -85,19 +79,22 @@ export default function Form(props) {
                     placeholder="Password"
                     type="text"
                     onChange={update}
-                />
+                /></label>
+                <div>{errors.password}</div>
                 <hr />
                 <label
                     className="label"
                     htmlFor="termsOfService"
-                >Terms of Service</label>
+                >Terms of Service
                 <input
                     className="checkbox"
                     id="termsCheckbox"
                     name="terms"
+                    value={formData.terms}
                     type="checkbox"
                     onChange={update}
-                />
+                /></label>
+                <div>{errors.terms}</div>
                 <input
                     className="submit-btn"
                     id="submit"
