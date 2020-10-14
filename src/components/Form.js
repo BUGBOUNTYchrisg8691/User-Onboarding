@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
 `
 
 export default function Form(props) {
-    const {formData, update, submit, disabled, errors} = props
+    const {formValues, update, submit, disabled, errors} = props
     
     return (
         <StyledDiv>
@@ -42,7 +42,7 @@ export default function Form(props) {
                     className="input"
                     id="inputName"
                     name="name"
-                    value={formData.name}
+                    value={formValues.name}
                     maxLength="30"
                     placeholder="Name"
                     type="text"
@@ -58,7 +58,7 @@ export default function Form(props) {
                     className="input"
                     id="inputEmail"
                     name="email"
-                    value={formData.email}
+                    value={formValues.email}
                     maxLength="30"
                     placeholder="Email"
                     type="text"
@@ -74,7 +74,7 @@ export default function Form(props) {
                     className="input"
                     id="inputPassword"
                     name="password"
-                    value={formData.password}
+                    value={formValues.password}
                     maxLength="30"
                     placeholder="Password"
                     type="text"
@@ -90,7 +90,7 @@ export default function Form(props) {
                     className="checkbox"
                     id="termsCheckbox"
                     name="terms"
-                    value={formData.terms}
+                    value={formValues.terms}
                     type="checkbox"
                     onChange={update}
                 /></label>
