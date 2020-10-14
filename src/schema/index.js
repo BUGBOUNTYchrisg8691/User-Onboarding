@@ -1,7 +1,7 @@
 import * as yup from "yup"
 
 const schema = yup.object().shape({
-    name: yup
+    user: yup
         .string()
         .required("Please include you full name")
         .label("name"),

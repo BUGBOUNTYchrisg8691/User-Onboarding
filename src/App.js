@@ -10,16 +10,17 @@ const { v4: uuidv4 } = require('uuid')
 
 export default function App() {
     const initialFormValues = {
-        name: '',
+        user: '',
         email: '',
         password: '',
         terms: false
     }
+
     const [users, setUsers] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [disabled, setDisabled] = useState(true)
     const [errors, setErrors] = useState({
-        name: "",
+        user: "",
         email: "",
         password: "",
         terms: ""
@@ -28,7 +29,7 @@ export default function App() {
     const getFormValues = e => {
         const {name, value, checked, type} = e.target
         const newValue = type === "checkbox" ? checked : value
-        handleSetErrors(name, value)
+        handleSetErrors(name, newValue)
         setFormValues({
             ...formValues,
             [name]: newValue
@@ -50,11 +51,11 @@ export default function App() {
     const formSubmit = e => {
         e.preventDefault()
         const newUser = {
-            name: formValues.name.trim(),
+            user: formValues.user.trim(),
             email: formValues.email.trim(),
             password: formValues.password.trim()
         }
-        axios.post("https://reqres.in/api/users")
+        axios.post("https://reqres.in/api/users", newUser)
             .then(resp => {
                 setUsers([...users, resp.data])
                 setFormValues(initialFormValues)

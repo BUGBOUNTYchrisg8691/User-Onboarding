@@ -36,19 +36,19 @@ export default function Form(props) {
             <form onSubmit={submit}>
                 <label 
                     className="label"
-                    htmlFor="name"
-                >Name
+                    htmlFor="user"
+                >Username
                 <input
                     className="input"
                     id="inputName"
-                    name="name"
-                    value={formValues.name}
+                    name="user"
+                    value={formValues.user}
                     maxLength="30"
                     placeholder="Name"
                     type="text"
                     onChange={update}
                 /></label>
-                <div>{errors.name}</div>
+                {formValues.user.length > 0 && <div>{errors.user}</div>}
                 <hr />
                 <label
                     className="label"
@@ -64,7 +64,7 @@ export default function Form(props) {
                     type="text"
                     onChange={update}
                 /></label>
-                <div>{errors.email}</div>
+                {formValues.email.length > 0 && <div>{errors.email}</div>}
                 <hr />
                 <label
                     className="label"
@@ -80,27 +80,28 @@ export default function Form(props) {
                     type="text"
                     onChange={update}
                 /></label>
-                <div>{errors.password}</div>
+                {formValues.password.length > 0 && <div>{errors.password}</div> }
                 <hr />
                 <label
                     className="label"
-                    htmlFor="termsOfService"
+                    htmlFor="terms"
                 >Terms of Service
                 <input
                     className="checkbox"
                     id="termsCheckbox"
                     name="terms"
-                    value={formValues.terms}
+                    checked={formValues.terms}
                     type="checkbox"
                     onChange={update}
                 /></label>
                 <div>{errors.terms}</div>
-                <input
+                <button disabled={disabled}>Submit</button>
+                {/* <input
                     className="submit-btn"
                     id="submit"
                     type="submit"
                     disabled={disabled}
-                />
+                /> */}
             </form>
         </StyledDiv>
     )
