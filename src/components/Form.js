@@ -30,6 +30,7 @@ const StyledDiv = styled.div`
 
 export default function Form(props) {
     const {formValues, update, submit, disabled, errors} = props
+    const availableRoles = ["Instructor", "Student", "Team Lead"]
     
     return (
         <StyledDiv>
@@ -81,6 +82,26 @@ export default function Form(props) {
                     onChange={update}
                 /></label>
                 {formValues.password.length > 0 && <div>{errors.password}</div> }
+                <hr />
+                <label
+                    className="label"
+                    htmlFor="role"
+                >Role
+                <select
+                    className="dropdown"
+                    id="roleDropdown"
+                    name="role"
+                    value={formValues.role} 
+                    onChange={update}
+                >
+                    <option value="">---Select Role---</option>
+                    {availableRoles.map(role => {
+                        return (
+                            <option value={role.toLowerCase()}>{role}</option>
+                        )
+                    })}
+                </select>
+                </label>
                 <hr />
                 <label
                     className="label"

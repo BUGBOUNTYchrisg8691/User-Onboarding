@@ -10,9 +10,10 @@ import { v4 as uuid } from "uuid"
 
 export default function App() {
     const initialFormValues = {
-        user: '',
-        email: '',
-        password: '',
+        user: "",
+        email: "",
+        password: "",
+        role: "",
         terms: false,
         id: uuid()
     }
@@ -24,6 +25,7 @@ export default function App() {
         user: "",
         email: "",
         password: "",
+        role: "",
         terms: ""
     })
 

@@ -29,6 +29,7 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "cypress": "^5.4.0",
     "parcel-bundler": "^1.12.4"
   }
 }
