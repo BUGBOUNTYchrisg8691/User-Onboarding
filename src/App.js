@@ -56,7 +56,8 @@ export default function App() {
         const newUser = {
             user: formValues.user.trim(),
             email: formValues.email.trim(),
-            password: formValues.password.trim()
+            password: formValues.password.trim(),
+            role: formValues.role
         }
         axios.post("https://reqres.in/api/users", newUser)
             .then(resp => {

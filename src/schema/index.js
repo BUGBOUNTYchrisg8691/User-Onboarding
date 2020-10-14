@@ -7,6 +7,12 @@ const schema = yup.object().shape({
         .label("name"),
     email: yup
         .string()
+        .test("waffle@syrup.com test", "Email already exists", value => {
+            if (value === "waffle@syrup.com") {
+                return false
+            }
+            return true
+        })
         .email("Must be a valid email address")
         .required("Must include a valid email email address")
         .label("email"),
