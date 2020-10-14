@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import * as yup from "yup"
 
 import styled from "styled-components"
 
@@ -28,11 +29,19 @@ const StyledDiv = styled.div`
 `
 
 export default function Form(props) {
-    const {getFormValues, formSubmit} = props
+    const {formData, update, submit, disabled, errors} = props
+    // const handleUpdate = e => {
+    //     update(e) 
+    // }
 
+    // const handleSubmit = e => {
+    //     e.preventDefualt()
+    //     submit()
+    // }
+    
     return (
         <StyledDiv>
-            <form onSubmit={formSubmit}>
+            <form onSubmit={submit}>
                 <label 
                     className="label"
                     htmlFor="name"
@@ -41,10 +50,11 @@ export default function Form(props) {
                     className="input"
                     id="inputName"
                     name="name"
+                    value={formData.name}
                     maxLength="30"
                     placeholder="Name"
                     type="text"
-                    onChange={getFormValues}
+                    onChange={update}
                 />
                 <hr />
                 <label
@@ -55,10 +65,11 @@ export default function Form(props) {
                     className="input"
                     id="inputEmail"
                     name="email"
+                    value={formData.email}
                     maxLength="30"
                     placeholder="Email"
                     type="text"
-                    onChange={getFormValues}
+                    onChange={update}
                 />
                 <hr />
                 <label
@@ -69,10 +80,11 @@ export default function Form(props) {
                     className="input"
                     id="inputPassword"
                     name="password"
+                    value={formData.password}
                     maxLength="30"
                     placeholder="Password"
                     type="text"
-                    onChange={getFormValues}
+                    onChange={update}
                 />
                 <hr />
                 <label
@@ -83,14 +95,14 @@ export default function Form(props) {
                     className="checkbox"
                     id="termsCheckbox"
                     name="terms"
-                    value="agree"
                     type="checkbox"
-                    onChange={getFormValues}
+                    onChange={update}
                 />
                 <input
                     className="submit-btn"
                     id="submit"
                     type="submit"
+                    disabled={disabled}
                 />
             </form>
         </StyledDiv>
