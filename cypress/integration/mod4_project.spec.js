@@ -91,6 +91,27 @@ describe("Module 4 Project tests", () => {
         .should("be.enabled")
     })
   })
+  describe("disabled button", () => {
+    it("Check to see if a user can submit the form data with empty field", () => {
+      nameInput()
+        .should("have.value", "")
+        .type("Christopher")
+        .should("have.value", "Christopher")
+      emailInput()
+        .should("have.value", "")
+        .type("chrisg@gmail.com")
+        .should("have.value", "chrisg@gmail.com")
+      passwdInput()
+        .should("have.value", "")
+        .type("abcdef1234")
+        .should("have.value", "abcdef1234")
+      termsChkbox()
+        .check()
+        .should("have.checked", true)
+      submitBtn()
+        .should("not.be.enabled")
+    })
+  })
 })
 
 // describe("Get the name input and type a name in it", () => {
