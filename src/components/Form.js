@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import * as yup from "yup"
 
 import styled from "styled-components"
 
@@ -69,22 +68,6 @@ export default function Form(props) {
                 <hr />
                 <label
                     className="label"
-                    htmlFor="password"
-                >Password
-                <input
-                    className="input"
-                    id="inputPassword"
-                    name="password"
-                    value={formValues.password}
-                    maxLength="30"
-                    placeholder="Password"
-                    type="text"
-                    onChange={update}
-                /></label>
-                {formValues.password.length > 0 && <div>{errors.password}</div> }
-                <hr />
-                <label
-                    className="label"
                     htmlFor="role"
                 >Role
                 <select
@@ -102,6 +85,22 @@ export default function Form(props) {
                     })}
                 </select>
                 </label>
+                <hr />
+                <label
+                    className="label"
+                    htmlFor="password"
+                >Password
+                <input
+                    className="input"
+                    id="inputPassword"
+                    name="password"
+                    value={formValues.password}
+                    maxLength="30"
+                    placeholder="Password"
+                    type="password"
+                    onChange={update}
+                /></label>
+                {formValues.password.length > 0 && <div>{errors.password}</div> }
                 <hr />
                 <label
                     className="label"
