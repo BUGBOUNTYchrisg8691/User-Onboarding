@@ -42,22 +42,6 @@ describe("check empty form sub", () => {
   })
 })
 
-describe("check input value text", () => {
-  const names = ["user", "email", "password"]
-  // const user = "user"
-  // const email = "email"
-  // const passwd = "password"
-  it("get all inputs and check that they are equal to form key", () => {
-    cy.visit("index.html")
-    names.forEach(name => {
-      cy.get(`input[name="${name}"]`).type("test")
-    cy.get(`select[name="role"]`).select('instructor')
-    cy.get(`input[name="${terms}"]`).check()
-    })
-  }) 
-})
-
-
 // describe("Test name input", () => {
 //   it("search for name input and type name", () => {
 //     cy.visit("index.html")

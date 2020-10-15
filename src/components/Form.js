@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 import styled from "styled-components"
 
@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
 
 export default function Form(props) {
     const {formValues, update, submit, disabled, errors} = props
-    const availableRoles = ["Instructor", "Student", "Team Lead"]
+    const availableRoles = ["Instructor", "Student", "Team Lead", "Alumni"]
     
     return (
         <StyledDiv>
@@ -48,7 +48,7 @@ export default function Form(props) {
                     type="text"
                     onChange={update}
                 /></label>
-                {formValues.user.length > 0 && <div>{errors.user}</div>}
+                <div>{errors.user}</div>
                 <hr />
                 <label
                     className="label"
@@ -64,7 +64,7 @@ export default function Form(props) {
                     type="text"
                     onChange={update}
                 /></label>
-                {formValues.email.length > 0 && <div>{errors.email}</div>}
+                <div>{errors.email}</div>
                 <hr />
                 <label
                     className="label"
@@ -80,11 +80,12 @@ export default function Form(props) {
                     <option value="">---Select Role---</option>
                     {availableRoles.map(role => {
                         return (
-                            <option value={role.toLowerCase()}>{role}</option>
+                            <option key={role} value={role.toLowerCase()}>{role}</option>
                         )
                     })}
                 </select>
                 </label>
+                <div>{errors.role}</div>
                 <hr />
                 <label
                     className="label"
@@ -100,7 +101,7 @@ export default function Form(props) {
                     type="password"
                     onChange={update}
                 /></label>
-                {formValues.password.length > 0 && <div>{errors.password}</div> }
+                <div>{errors.password}</div>
                 <hr />
                 <label
                     className="label"
