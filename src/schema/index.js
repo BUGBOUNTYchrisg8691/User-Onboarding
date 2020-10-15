@@ -24,7 +24,7 @@ const schema = yup.object().shape({
     role: yup
         .string()
         .required("Must select role")
-        .oneOf(["Instructor", "Alumni", "Student", "Team lead"])
+        .oneOf(["instructor", "alumni", "student", "team lead"])
         .label("role"),
     terms: yup
         .boolean()

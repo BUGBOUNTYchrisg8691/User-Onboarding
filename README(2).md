@@ -1,5 +1,7 @@
 # Module Challenge: Cypress Testing
 
+[Link to Project PR]("https://github.com/BUGBOUNTYchrisg8691/User-Onboarding/pull/1")
+
 The module challenge is the afternoon project or assignment that students work through independently. This expands on the guided project completed earlier with the instructor.
 
 ## Single Page Applications
@@ -45,10 +47,10 @@ Set up tests that will...
 - [x]  Get the `Name` input and type a name in it.
 - [x]  Use an assertion to check if the text inputted contains the name you provided (Hint: use the .should assertion)
 - [x]  Get the `Email` input and type an email address in it
-- [x] Get the `password` input and type a password in it
+- [x]  Get the `password` input and type a password in it
 - [x]  Set up a test that will check to see if a user can check the terms of service box
-- [x] Check to see if a user can submit the form data
-- [x] Check for form validation if an input is left empty
+- [x]  Check to see if a user can submit the form data
+- [x]  Check for form validation if an input is left empty
 
 ### Task 3: Stretch Goals
 
@@ -70,4 +72,4 @@ If you have time, write and run different tests based on common issues you have 
 
 ## Submission Format
 
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+* [x] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
