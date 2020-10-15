@@ -4,8 +4,9 @@
   "description": "We've seen many different styles of form management by now -- simple to complex. Today we are going to unleash your inner form-wizard! 🧙",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel public/index.html"
+    "start": "parcel public/index.html",
+    "test:web": "cypress open",
+    "test": "npx cypress run -s 'cypress/integration/mod4_project.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,14 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-native": "^0.63.3",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "uuid": "^8.3.1",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
+    "cypress": "^5.4.0",
     "parcel-bundler": "^1.12.4"
   }
 }
